@@ -33,6 +33,11 @@ From local box create a public/private key pair with the command below
 
 ssh-keygen
 
+7. Just for my own preference I set the hostname of the box to be plex and rebooted.
+
+sudo vim /etc/hostname
+
+sudo /bin/reboot
 Once this is created you need to find the ip address of the new box and ensure that you can ssh into that box.
 
 "ip a" will show you the local address of the box.
@@ -56,3 +61,10 @@ To simplify things you can create a config file in the .ssh directory and create
 When connecting through powershell only the ssh-copy-id utility is not there. You will have to cut and paste the id_rsa.pub key from that box into the known_hosts
   file on the remote box. The same instructions apply for the creation of the config file.
   
+
+8. Now we need to get docker installed on the pi. I am following intructions from the site below 
+
+https://www.simplilearn.com/tutorials/docker-tutorial/raspberry-pi-docker
+
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo usermod -aG docker ubuntu
