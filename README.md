@@ -15,7 +15,18 @@ docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /va
 ## Firewall Configuration
 
 Check the status of the firewall and enable
-'''bash
+
 ufw status
 ufw enable
-'''
+
+If there is an application profile you can enable that using it's name
+
+sudo ufw app list
+Available applications:
+  CUPS
+  OpenSSH
+sudo ufw allow OpenSSH
+
+Now we need to open the port for portainer interface
+sudo ufw allow 9443
+
